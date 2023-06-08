@@ -17,6 +17,8 @@ import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import { RxCross1 } from "react-icons/rx";
+import styled from "styled-components"
+import Logo from "../../Assests/logo/logo.png"
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -54,28 +56,30 @@ const Header = ({ activeHeading }) => {
 
   return (
     <>
-      <div className={`${styles.section}`}>
-        <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
+      <div className={`m-0 w-100`}>
+        <div className="hidden 800px:h-[50px]  800px:flex items-center justify-between p-12 bg-[#FFABAB]">
           <div>
             <Link to="/">
               <img
-                src="https://shopo.quomodothemes.website/assets/images/logo.svg"
+                src={Logo}
+                style={{width: "150px"}}
                 alt=""
               />
             </Link>
           </div>
           {/* search box */}
           <div className="w-[50%] relative">
-            <input
+            <Searchbar
               type="text"
               placeholder="Search Product..."
               value={searchTerm}
               onChange={handleSearchChange}
-              className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
+              className="h-[40px] w-full px-2 border-[#FEF2F4] border-[2px] rounded-md  bg-[#FFABAB]"
             />
             <AiOutlineSearch
               size={30}
               className="absolute right-2 top-1.5 cursor-pointer"
+              style={{color: "#FEF2F4"}}
             />
             {searchData && searchData.length !== 0 ? (
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
@@ -111,7 +115,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between w-full bg-[#D14D72] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -119,14 +123,15 @@ const Header = ({ activeHeading }) => {
           {/* categories */}
           <div onClick={() => setDropDown(!dropDown)}>
             <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
-              <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
+              <BiMenuAltLeft size={30} className="absolute top-3 left-2" color="#D14D72" />
               <button
-                className={`h-[100%] w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
+                className={`h-[100%] w-full flex justify-between text-[#D14D72] items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
               >
                 All Categories
               </button>
               <IoIosArrowDown
                 size={20}
+                color="#D14D72"
                 className="absolute right-2 top-4 cursor-pointer"
                 onClick={() => setDropDown(!dropDown)}
               />
@@ -150,7 +155,7 @@ const Header = ({ activeHeading }) => {
                 onClick={() => setOpenWishlist(true)}
               >
                 <AiOutlineHeart size={30} color="rgb(255 255 255 / 83%)" />
-                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                <span className="absolute right-0 top-0 rounded-full  bg-[#FFABAB] 800px:bg-[#FCC8D1] w-4 h-4 top right p-0 m-0 text-[#D14D72] font-mono text-[12px] leading-tight text-center">
                   {wishlist && wishlist.length}
                 </span>
               </div>
@@ -165,7 +170,7 @@ const Header = ({ activeHeading }) => {
                   size={30}
                   color="rgb(255 255 255 / 83%)"
                 />
-                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                <span className="absolute right-0 top-0 rounded-full  bg-[#FFABAB] 800px:bg-[#FCC8D1] w-4 h-4 top right p-0 m-0 text-[#D14D72] font-mono text-[12px] leading-tight text-center">
                   {cart && cart.length}
                 </span>
               </div>
@@ -205,9 +210,9 @@ const Header = ({ activeHeading }) => {
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
         }
-      w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
+      w-full h-[60px] bg-[#FFABAB] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
-        <div className="w-full flex items-center justify-between">
+        <div className="w-full flex items-center justify-between text-white">
           <div>
             <BiMenuAltLeft
               size={40}
@@ -229,8 +234,8 @@ const Header = ({ activeHeading }) => {
               className="relative mr-[20px]"
               onClick={() => setOpenCart(true)}
             >
-              <AiOutlineShoppingCart size={30} />
-              <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
+              <AiOutlineShoppingCart size={30} color="#fff"/>
+              <span class="absolute right-0 top-0 rounded-full bg-[#FFABAB] w-4 h-4 top right p-0 m-0 text-[#D14D72] font-mono text-[12px]  leading-tight text-center">
                 {cart && cart.length}
               </span>
             </div>
@@ -254,8 +259,8 @@ const Header = ({ activeHeading }) => {
                     className="relative mr-[15px]"
                     onClick={() => setOpenWishlist(true) || setOpen(false)}
                   >
-                    <AiOutlineHeart size={30} className="mt-5 ml-3" />
-                    <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
+                    <AiOutlineHeart size={30} className="mt-5 ml-3" color="#D14D72" />
+                    <span class="absolute right-0 top-0 rounded-full bg-[#FFABAB] w-4 h-4 top right p-0 m-0 text-[#D14D72] font-mono text-[12px]  leading-tight text-center">
                       {wishlist && wishlist.length}
                     </span>
                   </div>
@@ -264,6 +269,7 @@ const Header = ({ activeHeading }) => {
                   size={30}
                   className="ml-4 mt-5"
                   onClick={() => setOpen(false)}
+                  color="#D14D72" 
                 />
               </div>
 
@@ -271,7 +277,7 @@ const Header = ({ activeHeading }) => {
                 <input
                   type="search"
                   placeholder="Search Product..."
-                  className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
+                  className="h-[40px] w-full px-2 border-[#D14D72] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
@@ -317,7 +323,7 @@ const Header = ({ activeHeading }) => {
                       <img
                         src={`${backend_url}/${user.avatar}`}
                         alt=""
-                        className="w-[60px] h-[60px] rounded-full border-[3px] border-[#0eae88]"
+                        className="w-[60px] h-[60px] rounded-full border-[3px] border-[#D14D72]"
                       />
                     </Link>
                   </div>
@@ -347,3 +353,11 @@ const Header = ({ activeHeading }) => {
 };
 
 export default Header;
+
+
+const Searchbar = styled.input`
+  &::placeholder {
+            color: #FEF2F4;
+  }
+  color: #FEF2F4;
+`;

@@ -16,6 +16,8 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../redux/actions/wishlist";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import { Button, styled } from "@mui/material";
 
 const ProductDetailsCard = ({ setOpen, data }) => {
   const { cart } = useSelector((state) => state.cart);
@@ -77,7 +79,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
           <div className="w-[90%] 800px:w-[60%] h-[90vh] overflow-y-scroll 800px:h-[75vh] bg-white rounded-md shadow-sm relative p-4">
             <RxCross1
               size={30}
-              className="absolute right-3 top-3 z-50"
+              className="absolute right-3 top-3 z-50 text-[#D14D72]"
               onClick={() => setOpen(false)}
             />
 
@@ -98,7 +100,6 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <h3 className={`${styles.shop_name}`}>
                         {data.shop.name}
                       </h3>
-                      <h5 className="pb-3 text-[15px]">(4.5) Ratings</h5>
                     </div>
                   </Link>
                 </div>
@@ -110,15 +111,20 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     Send Message <AiOutlineMessage className="ml-1" />
                   </span>
                 </div>
-                <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5>
               </div>
 
               <div className="w-full 800px:w-[50%] pt-5 pl-[5px] pr-[5px]">
                 <h1 className={`${styles.productTitle} text-[20px]`}>
                   {data.name}
                 </h1>
-                <p>{data.description}</p>
-
+                <p className="text-[#D14D72]">{data.description}</p>
+                <BootstrapButton
+                  variant="outlined"
+                  startIcon={<LocalOfferIcon />}
+                  sx={{ width: "100%", my: 2, pointerEvents: "none" }}
+                >
+                  Günlük Fiyat
+                </BootstrapButton>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
                     {data.discountPrice}$
@@ -127,19 +133,20 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     {data.originalPrice ? data.originalPrice + "$" : null}
                   </h3>
                 </div>
-                <div className="flex items-center mt-12 justify-between pr-3">
+                <h6 className="mt-12 font-bold text-[#D14D72]">Gün:</h6>
+                <div className="flex items-center mt-2 justify-between pr-3">
                   <div>
                     <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
+                      className="bg-[#D14D72] text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
                       onClick={decrementCount}
                     >
                       -
                     </button>
-                    <span className="bg-gray-200 text-gray-800 font-medium px-4 py-[11px]">
+                    <span className="bg-[#FFABAB] text-[#D14D72] font-medium px-4 py-[11px]">
                       {count}
                     </span>
                     <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
+                      className="bg-[#D14D72] text-white font-bold rounded-r px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
                       onClick={incrementCount}
                     >
                       +
@@ -182,3 +189,11 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 };
 
 export default ProductDetailsCard;
+
+const BootstrapButton = styled(Button)({
+  border: "1px solid",
+  lineHeight: 1.5,
+  backgroundColor: "tranparent",
+  borderColor: "#D14D72",
+  color: "#D14D72",
+});
