@@ -24,7 +24,7 @@ const Footer = () => {
             style={{width: "250px"}}
           />
           <br />
-          <p>The home and elements needeed to create beatiful products.</p>
+          <p> </p>
           <div className="flex items-center mt-[15px]">
             <AiFillFacebook size={25} className="cursor-pointer" />
             <AiOutlineTwitter
@@ -43,7 +43,7 @@ const Footer = () => {
         </ul>
 
         <ul className="text-center sm:text-start">
-          <h1 className="mb-1 font-semibold">Company</h1>
+          <h1 className="mb-1 font-semibold">KipKira</h1>
           {footerProductLinks.map((link,index) => (
             <li key={index}>
               <Link
@@ -58,7 +58,7 @@ const Footer = () => {
         </ul>
 
         <ul className="text-center sm:text-start">
-          <h1 className="mb-1 font-semibold">Shop</h1>
+          <h1 className="mb-1 font-semibold">Alışveriş</h1>
           {footercompanyLinks.map((link,index) => (
             <li key={index}>
               <Link
@@ -73,7 +73,7 @@ const Footer = () => {
         </ul>
 
         <ul className="text-center sm:text-start">
-          <h1 className="mb-1 font-semibold">Support</h1>
+          <h1 className="mb-1 font-semibold">Destek</h1>
           {footerSupportLinks.map((link,index) => (
             <li key={index}>
               <Link
@@ -92,7 +92,7 @@ const Footer = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
          text-center pt-2 text-[#FCC8D1] text-sm pb-8"
       >
-        <span>© 2020 Becodemy. All rights reserved.</span>
+        <span>© 2023 KipKira. Tüm hakları saklıdır.</span>
         <span>Terms · Privacy Policy</span>
         <div className="sm:block flex items-center justify-center w-full">
           <img

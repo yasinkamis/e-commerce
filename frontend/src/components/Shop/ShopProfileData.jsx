@@ -34,10 +34,10 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 1 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Products
+              Kiralatan Ürünleri
             </h5>
           </div>
-          <div className="flex items-center" onClick={() => setActive(2)}>
+          {/*<div className="flex items-center" onClick={() => setActive(2)}>
             <h5
               className={`font-[600] text-[20px] ${
                 active === 2 ? "text-red-500" : "text-[#333]"
@@ -45,7 +45,7 @@ const ShopProfileData = ({ isOwner }) => {
             >
               Running Events
             </h5>
-          </div>
+            </div>*/}
 
           <div className="flex items-center" onClick={() => setActive(3)}>
             <h5
@@ -53,7 +53,7 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 3 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Reviews
+              Kiralatan İncelemeleri
             </h5>
           </div>
         </div>
@@ -62,7 +62,7 @@ const ShopProfileData = ({ isOwner }) => {
             <div>
               <Link to="/dashboard">
                 <div className={`${styles.button} !rounded-[4px] h-[42px]`}>
-                  <span className="text-[#fff]">Go Dashboard</span>
+                  <span className="text-[#fff]">Panele Git</span>
                 </div>
               </Link>
             </div>
@@ -123,7 +123,7 @@ const ShopProfileData = ({ isOwner }) => {
             ))}
           {allReviews && allReviews.length === 0 && (
             <h5 className="w-full text-center py-5 text-[18px]">
-              No Reviews have for this shop!
+              Bu Kiralatan için inceleme bulunmuyor!
             </h5>
           )}
         </div>

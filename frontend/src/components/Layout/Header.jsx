@@ -17,8 +17,8 @@ import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import { RxCross1 } from "react-icons/rx";
-import styled from "styled-components"
-import Logo from "../../Assests/logo/logo.png"
+import styled from "styled-components";
+import Logo from "../../Assests/logo/logo.png";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -60,18 +60,14 @@ const Header = ({ activeHeading }) => {
         <div className="hidden 800px:h-[50px]  800px:flex items-center justify-between p-12 bg-[#FFABAB]">
           <div>
             <Link to="/">
-              <img
-                src={Logo}
-                style={{width: "150px"}}
-                alt=""
-              />
+              <img src={Logo} style={{ width: "150px" }} alt="" />
             </Link>
           </div>
           {/* search box */}
           <div className="w-[50%] relative">
             <Searchbar
               type="text"
-              placeholder="Search Product..."
+              placeholder="Ürün Ara..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-full px-2 border-[#FEF2F4] border-[2px] rounded-md  bg-[#FFABAB]"
@@ -79,7 +75,7 @@ const Header = ({ activeHeading }) => {
             <AiOutlineSearch
               size={30}
               className="absolute right-2 top-1.5 cursor-pointer"
-              style={{color: "#FEF2F4"}}
+              style={{ color: "#FEF2F4" }}
             />
             {searchData && searchData.length !== 0 ? (
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
@@ -105,7 +101,7 @@ const Header = ({ activeHeading }) => {
           <div className={`${styles.button}`}>
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#fff] flex items-center">
-                {isSeller ? "Go Dashboard" : "Become Seller"}{" "}
+                {isSeller ? "Panele Git" : "Become Seller"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
@@ -123,11 +119,15 @@ const Header = ({ activeHeading }) => {
           {/* categories */}
           <div onClick={() => setDropDown(!dropDown)}>
             <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
-              <BiMenuAltLeft size={30} className="absolute top-3 left-2" color="#D14D72" />
+              <BiMenuAltLeft
+                size={30}
+                className="absolute top-3 left-2"
+                color="#D14D72"
+              />
               <button
                 className={`h-[100%] w-full flex justify-between text-[#D14D72] items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
               >
-                All Categories
+                Tüm Kategoriler
               </button>
               <IoIosArrowDown
                 size={20}
@@ -234,7 +234,7 @@ const Header = ({ activeHeading }) => {
               className="relative mr-[20px]"
               onClick={() => setOpenCart(true)}
             >
-              <AiOutlineShoppingCart size={30} color="#fff"/>
+              <AiOutlineShoppingCart size={30} color="#fff" />
               <span class="absolute right-0 top-0 rounded-full bg-[#FFABAB] w-4 h-4 top right p-0 m-0 text-[#D14D72] font-mono text-[12px]  leading-tight text-center">
                 {cart && cart.length}
               </span>
@@ -259,7 +259,11 @@ const Header = ({ activeHeading }) => {
                     className="relative mr-[15px]"
                     onClick={() => setOpenWishlist(true) || setOpen(false)}
                   >
-                    <AiOutlineHeart size={30} className="mt-5 ml-3" color="#D14D72" />
+                    <AiOutlineHeart
+                      size={30}
+                      className="mt-5 ml-3"
+                      color="#D14D72"
+                    />
                     <span class="absolute right-0 top-0 rounded-full bg-[#FFABAB] w-4 h-4 top right p-0 m-0 text-[#D14D72] font-mono text-[12px]  leading-tight text-center">
                       {wishlist && wishlist.length}
                     </span>
@@ -269,14 +273,14 @@ const Header = ({ activeHeading }) => {
                   size={30}
                   className="ml-4 mt-5"
                   onClick={() => setOpen(false)}
-                  color="#D14D72" 
+                  color="#D14D72"
                 />
               </div>
 
               <div className="my-8 w-[92%] m-auto h-[40px relative]">
                 <input
                   type="search"
-                  placeholder="Search Product..."
+                  placeholder="Ürün Ara..."
                   className="h-[40px] w-full px-2 border-[#D14D72] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
@@ -308,7 +312,7 @@ const Header = ({ activeHeading }) => {
               <div className={`${styles.button} ml-4 !rounded-[4px]`}>
                 <Link to="/shop-create">
                   <h1 className="text-[#fff] flex items-center">
-                    Become Seller <IoIosArrowForward className="ml-1" />
+                    Kiralatan Ol <IoIosArrowForward className="ml-1" />
                   </h1>
                 </Link>
               </div>
@@ -333,13 +337,13 @@ const Header = ({ activeHeading }) => {
                       to="/login"
                       className="text-[18px] pr-[10px] text-[#000000b7]"
                     >
-                      Login /
+                      Giriş Yap /
                     </Link>
                     <Link
                       to="/sign-up"
                       className="text-[18px] text-[#000000b7]"
                     >
-                      Sign up
+                      Kayıt Ol
                     </Link>
                   </>
                 )}
@@ -354,10 +358,9 @@ const Header = ({ activeHeading }) => {
 
 export default Header;
 
-
 const Searchbar = styled.input`
   &::placeholder {
-            color: #FEF2F4;
+    color: #fef2f4;
   }
-  color: #FEF2F4;
+  color: #fef2f4;
 `;

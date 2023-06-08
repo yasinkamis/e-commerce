@@ -9,13 +9,14 @@ import { toast } from "react-toastify";
 
 const ShopSettings = () => {
   const { seller } = useSelector((state) => state.seller);
-  const [avatar,setAvatar] = useState();
-  const [name,setName] = useState(seller && seller.name);
-  const [description,setDescription] = useState(seller && seller.description ? seller.description : "");
-  const [address,setAddress] = useState(seller && seller.address);
-  const [phoneNumber,setPhoneNumber] = useState(seller && seller.phoneNumber);
-  const [zipCode,setZipcode] = useState(seller && seller.zipCode);
-
+  const [avatar, setAvatar] = useState();
+  const [name, setName] = useState(seller && seller.name);
+  const [description, setDescription] = useState(
+    seller && seller.description ? seller.description : ""
+  );
+  const [address, setAddress] = useState(seller && seller.address);
+  const [phoneNumber, setPhoneNumber] = useState(seller && seller.phoneNumber);
+  const [zipCode, setZipcode] = useState(seller && seller.zipCode);
 
   const dispatch = useDispatch();
 
@@ -27,39 +28,46 @@ const ShopSettings = () => {
     const formData = new FormData();
 
     formData.append("image", e.target.files[0]);
-    
-    await axios.put(`${server}/shop/update-shop-avatar`, formData,{
+
+    await axios
+      .put(`${server}/shop/update-shop-avatar`, formData, {
         headers: {
-            "Content-Type": "multipart/form-data",
+          "Content-Type": "multipart/form-data",
         },
         withCredentials: true,
-    }).then((res) => {
+      })
+      .then((res) => {
         dispatch(loadSeller());
-        toast.success("Avatar updated successfully!")
-    }).catch((error) => {
+        toast.success("Avatar updated successfully!");
+      })
+      .catch((error) => {
         toast.error(error.response.data.message);
-    })
-
+      });
   };
 
   const updateHandler = async (e) => {
     e.preventDefault();
-    
-    await axios.put(`${server}/shop/update-seller-info`, {
-        name,
-        address,
-        zipCode,
-        phoneNumber,
-        description,
-    }, {withCredentials: true}).then((res) => {
+
+    await axios
+      .put(
+        `${server}/shop/update-seller-info`,
+        {
+          name,
+          address,
+          zipCode,
+          phoneNumber,
+          description,
+        },
+        { withCredentials: true }
+      )
+      .then((res) => {
         toast.success("Shop info updated succesfully!");
         dispatch(loadSeller());
-    }).catch((error)=> {
+      })
+      .catch((error) => {
         toast.error(error.response.data.message);
-    })
+      });
   };
-
-
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center">
@@ -68,7 +76,9 @@ const ShopSettings = () => {
           <div className="relative">
             <img
               src={
-                avatar ? URL.createObjectURL(avatar) : `${backend_url}/${seller.avatar}`
+                avatar
+                  ? URL.createObjectURL(avatar)
+                  : `${backend_url}/${seller.avatar}`
               }
               alt=""
               className="w-[200px] h-[200px] rounded-full cursor-pointer"
@@ -95,7 +105,7 @@ const ShopSettings = () => {
         >
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Name</label>
+              <label className="block pb-2">Kiralatan İsmi</label>
             </div>
             <input
               type="name"
@@ -108,7 +118,7 @@ const ShopSettings = () => {
           </div>
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop description</label>
+              <label className="block pb-2">Kiralatan Açıklaması</label>
             </div>
             <input
               type="name"
@@ -124,7 +134,7 @@ const ShopSettings = () => {
           </div>
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Address</label>
+              <label className="block pb-2">Kiralatan Addres</label>
             </div>
             <input
               type="name"
@@ -138,7 +148,7 @@ const ShopSettings = () => {
 
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Phone Number</label>
+              <label className="block pb-2">Kiralatan Telefon Numarası</label>
             </div>
             <input
               type="number"
@@ -152,7 +162,7 @@ const ShopSettings = () => {
 
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Zip Code</label>
+              <label className="block pb-2">Kiralatan Posta Kodu</label>
             </div>
             <input
               type="number"

@@ -36,7 +36,7 @@ const Faq = () => {
             onClick={() => toggleTab(2)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-              What is your return policy?
+              İade şartlarınız nedir?
             </span>
             {activeTab === 2 ? (
               <svg

@@ -23,11 +23,11 @@ const DashboardHero = () => {
   const availableBalance = seller?.availableBalance.toFixed(2);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Ürün No", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
-      headerName: "Status",
+      headerName: "Durum",
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
@@ -38,7 +38,7 @@ const DashboardHero = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Ürün Adedi",
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -46,7 +46,7 @@ const DashboardHero = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: "Toplam",
       type: "number",
       minWidth: 130,
       flex: 0.8,
@@ -79,7 +79,7 @@ const DashboardHero = () => {
     row.push({
         id: item._id,
         itemsQty: item.cart.reduce((acc, item) => acc + item.qty, 0),
-        total: "US$ " + item.totalPrice,
+        total: "TRY₺" + item.totalPrice,
         status: item.status,
       });
   });
@@ -97,13 +97,13 @@ const DashboardHero = () => {
             <h3
               className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
             >
-              Account Balance{" "}
-              <span className="text-[16px]">(with 10% service charge)</span>
+              Hesap Bakiyesi{" "}
+              <span className="text-[16px]">(%10 service ücreti ile)</span>
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">${availableBalance}</h5>
           <Link to="/dashboard-withdraw-money">
-            <h5 className="pt-4 pl-[2] text-[#077f9c]">Withdraw Money</h5>
+            <h5 className="pt-4 pl-[2] text-[#077f9c]">Para Çekim Talepleri</h5>
           </Link>
         </div>
 
@@ -113,12 +113,12 @@ const DashboardHero = () => {
             <h3
               className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
             >
-              All Orders
+              Tüm Siparişler
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{orders && orders.length}</h5>
           <Link to="/dashboard-orders">
-            <h5 className="pt-4 pl-2 text-[#077f9c]">View Orders</h5>
+            <h5 className="pt-4 pl-2 text-[#077f9c]">Siparişleri Görüntüle</h5>
           </Link>
         </div>
 
@@ -132,17 +132,17 @@ const DashboardHero = () => {
             <h3
               className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
             >
-              All Products
+              Tüm Ürünler
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{products && products.length}</h5>
           <Link to="/dashboard-products">
-            <h5 className="pt-4 pl-2 text-[#077f9c]">View Products</h5>
+            <h5 className="pt-4 pl-2 text-[#077f9c]">Ürünleri Görüntüle</h5>
           </Link>
         </div>
       </div>
       <br />
-      <h3 className="text-[22px] font-Poppins pb-2">Latest Orders</h3>
+      <h3 className="text-[22px] font-Poppins pb-2">Son Siparişler</h3>
       <div className="w-full min-h-[45vh] bg-white rounded">
       <DataGrid
         rows={row}

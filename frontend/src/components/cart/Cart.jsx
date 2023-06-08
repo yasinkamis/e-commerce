@@ -39,7 +39,7 @@ const Cart = ({ setOpenCart }) => {
                 color="#D14D72"
                 />
             </div>
-            <h5 className="text-[#D14D72]">Cart Items is empty!</h5>
+            <h5 className="text-[#D14D72]">Sepetiniz Boş!</h5>
           </div>
         ) : (
           <>
@@ -55,7 +55,7 @@ const Cart = ({ setOpenCart }) => {
               {/* Item length */}
               <div className={`${styles.noramlFlex} p-4 text-[#D14D72]`}>
                 <IoBagHandleOutline size={25} color="#D14D72"/>
-                <h5 className="pl-2 text-[20px] font-[500]">{cart && cart.length} items</h5>
+                <h5 className="pl-2 text-[20px] font-[500]">{cart && cart.length} Ürünler</h5>
               </div>
 
               {/* cart Single Items */}
@@ -80,7 +80,7 @@ const Cart = ({ setOpenCart }) => {
                   className={`h-[45px] flex items-center justify-center w-[100%] bg-[#D14D72] rounded-[5px]`}
                 >
                   <h1 className="text-[#fff] text-[18px] font-[600]">
-                    Checkout Now (USD${totalPrice})
+                    Şimdi Kontrol Et (TRY₺ {totalPrice})
                   </h1>
                 </div>
               </Link>
@@ -138,10 +138,10 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
         <div className="pl-[5px] text-[#D14D72]">
           <h1>{data.name}</h1>
           <h4 className="font-[400] text-[15px] text-[#D14D72]">
-            ${data.discountPrice} * {value}
+            ₺{data.discountPrice} * {value}
           </h4>
           <h4 className="font-[600] text-[17px] pt-[3px] text-[#D14D72] font-Roboto">
-            US${totalPrice}
+            TRY₺{totalPrice}
           </h4>
         </div>
         <RxCross1

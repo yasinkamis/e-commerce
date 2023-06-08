@@ -51,16 +51,19 @@ const UserOrderDetails = () => {
         toast.error(error);
       });
   };
-  
+
   const refundHandler = async () => {
-    await axios.put(`${server}/order/order-refund/${id}`,{
-      status: "Processing refund"
-    }).then((res) => {
-       toast.success(res.data.message);
-    dispatch(getAllOrdersOfUser(user._id));
-    }).catch((error) => {
-      toast.error(error.response.data.message);
-    })
+    await axios
+      .put(`${server}/order/order-refund/${id}`, {
+        status: "Processing refund",
+      })
+      .then((res) => {
+        toast.success(res.data.message);
+        dispatch(getAllOrdersOfUser(user._id));
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+      });
   };
 
   return (
@@ -74,10 +77,10 @@ const UserOrderDetails = () => {
 
       <div className="w-full flex items-center justify-between pt-6">
         <h5 className="text-[#00000084]">
-          Order ID: <span>#{data?._id?.slice(0, 8)}</span>
+          Sipariş No: <span>#{data?._id?.slice(0, 8)}</span>
         </h5>
         <h5 className="text-[#00000084]">
-          Placed on: <span>{data?.createdAt?.slice(0, 10)}</span>
+          İşleme Alınma: <span>{data?.createdAt?.slice(0, 10)}</span>
         </h5>
       </div>
 
@@ -86,30 +89,30 @@ const UserOrderDetails = () => {
       <br />
       {data &&
         data?.cart.map((item, index) => {
-          return(
-          <div className="w-full flex items-start mb-5">
-            <img
-              src={`${backend_url}/${item.images[0]}`}
-              alt=""
-              className="w-[80x] h-[80px]"
-            />
-            <div className="w-full">
-              <h5 className="pl-3 text-[20px]">{item.name}</h5>
-              <h5 className="pl-3 text-[20px] text-[#00000091]">
-                US${item.discountPrice} x {item.qty}
-              </h5>
+          return (
+            <div className="w-full flex items-start mb-5">
+              <img
+                src={`${backend_url}/${item.images[0]}`}
+                alt=""
+                className="w-[80x] h-[80px]"
+              />
+              <div className="w-full">
+                <h5 className="pl-3 text-[20px]">{item.name}</h5>
+                <h5 className="pl-3 text-[20px] text-[#00000091]">
+                  TRY₺{item.discountPrice} x {item.qty}
+                </h5>
+              </div>
+              {!item.isReviewed && data?.status === "Delivered" ? (
+                <div
+                  className={`${styles.button} text-[#fff]`}
+                  onClick={() => setOpen(true) || setSelectedItem(item)}
+                >
+                  İnceleme Yaz
+                </div>
+              ) : null}
             </div>
-            {!item.isReviewed && data?.status === "Delivered" ?  <div
-                className={`${styles.button} text-[#fff]`}
-                onClick={() => setOpen(true) || setSelectedItem(item)}
-              >
-                Write a review
-              </div> : (
-             null
-            )}
-          </div>
-          )
-         })}
+          );
+        })}
 
       {/* review popup */}
       {open && (
@@ -123,7 +126,7 @@ const UserOrderDetails = () => {
               />
             </div>
             <h2 className="text-[30px] font-[500] font-Poppins text-center">
-              Give a Review
+              İnceleme Yap
             </h2>
             <br />
             <div className="w-full flex">
@@ -135,7 +138,7 @@ const UserOrderDetails = () => {
               <div>
                 <div className="pl-3 text-[20px]">{selectedItem?.name}</div>
                 <h4 className="pl-3 text-[20px]">
-                  US${selectedItem?.discountPrice} x {selectedItem?.qty}
+                  TRY₺{selectedItem?.discountPrice} x {selectedItem?.qty}
                 </h4>
               </div>
             </div>
@@ -145,7 +148,7 @@ const UserOrderDetails = () => {
 
             {/* ratings */}
             <h5 className="pl-3 text-[20px] font-[500]">
-              Give a Rating <span className="text-red-500">*</span>
+              Puanla <span className="text-red-500">*</span>
             </h5>
             <div className="flex w-full ml-2 pt-1">
               {[1, 2, 3, 4, 5].map((i) =>
@@ -171,7 +174,7 @@ const UserOrderDetails = () => {
             <br />
             <div className="w-full ml-3">
               <label className="block text-[20px] font-[500]">
-                Write a comment
+                Yorum Yap
                 <span className="ml-1 font-[400] text-[16px] text-[#00000052]">
                   (optional)
                 </span>
@@ -191,7 +194,7 @@ const UserOrderDetails = () => {
               className={`${styles.button} text-white text-[20px] ml-3`}
               onClick={rating > 1 ? reviewHandler : null}
             >
-              Submit
+              Gönder
             </div>
           </div>
         </div>
@@ -199,14 +202,14 @@ const UserOrderDetails = () => {
 
       <div className="border-t w-full text-right">
         <h5 className="pt-3 text-[18px]">
-          Total Price: <strong>US${data?.totalPrice}</strong>
+          Toplam Tutar: <strong>TRY₺{data?.totalPrice}</strong>
         </h5>
       </div>
       <br />
       <br />
       <div className="w-full 800px:flex items-center">
         <div className="w-full 800px:w-[60%]">
-          <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
+          <h4 className="pt-3 text-[20px] font-[600]">Teslimat Adresi:</h4>
           <h4 className="pt-3 text-[20px]">
             {data?.shippingAddress.address1 +
               " " +
@@ -217,24 +220,25 @@ const UserOrderDetails = () => {
           <h4 className=" text-[20px]">{data?.user?.phoneNumber}</h4>
         </div>
         <div className="w-full 800px:w-[40%]">
-          <h4 className="pt-3 text-[20px]">Payment Info:</h4>
+          <h4 className="pt-3 text-[20px]">Ödeme Bilgisi:</h4>
           <h4>
-            Status:{" "}
+            Durum:{" "}
             {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not Paid"}
           </h4>
           <br />
-           {
-            data?.status === "Delivered" && (
-              <div className={`${styles.button} text-white`}
+          {data?.status === "Delivered" && (
+            <div
+              className={`${styles.button} text-white`}
               onClick={refundHandler}
-              >Give a Refund</div>
-            )
-           }
+            >
+              İade Talebi
+            </div>
+          )}
         </div>
       </div>
       <br />
       <Link to="/">
-        <div className={`${styles.button} text-white`}>Send Message</div>
+        <div className={`${styles.button} text-white`}>Mesaj Yolla</div>
       </Link>
       <br />
       <br />
