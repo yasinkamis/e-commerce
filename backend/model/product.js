@@ -46,10 +46,10 @@ const productSchema = new mongoose.Schema({
       productId: {
         type: String,
       },
-      createdAt:{
+      createdAt: {
         type: Date,
         default: Date.now(),
-      }
+      },
     },
   ],
   ratings: {
@@ -70,6 +70,10 @@ const productSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now(),
+  },
+  rentTime: {
+    type: Number,
+    required: [true, "Please enter your Rent Time!"],
   },
 });
 
