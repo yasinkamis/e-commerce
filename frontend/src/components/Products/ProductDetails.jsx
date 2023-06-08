@@ -14,10 +14,12 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../redux/actions/wishlist";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { addTocart } from "../../redux/actions/cart";
 import { toast } from "react-toastify";
 import Ratings from "./Ratings";
 import axios from "axios";
+import { Button } from "@mui/material";
 
 const ProductDetails = ({ data }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -85,10 +87,9 @@ const ProductDetails = ({ data }) => {
       0
     );
 
-  const avg =  totalRatings / totalReviewsLength || 0;
+  const avg = totalRatings / totalReviewsLength || 0;
 
   const averageRating = avg.toFixed(2);
-
 
   const handleMessageSubmit = async () => {
     if (isAuthenticated) {
@@ -147,9 +148,16 @@ const ProductDetails = ({ data }) => {
                   ></div>
                 </div>
               </div>
-              <div className="w-full 800px:w-[50%] pt-5">
+              <div className="w-full 800px:w-[50%] pt-5 pl-5">
                 <h1 className={`${styles.productTitle}`}>{data.name}</h1>
                 <p>{data.description}</p>
+                <Button
+                  variant="outlined"
+                  startIcon={<LocalOfferIcon />}
+                  sx={{ width: "100%", my: 2, pointerEvents: "none" }}
+                >
+                  Günlük Fiyat
+                </Button>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
                     {data.discountPrice}$
@@ -158,8 +166,8 @@ const ProductDetails = ({ data }) => {
                     {data.originalPrice ? data.originalPrice + "$" : null}
                   </h3>
                 </div>
-
-                <div className="flex items-center mt-12 justify-between pr-3">
+                  <h6 className="mt-12 font-bold">Gün:</h6>
+                <div className="flex items-center mt-2 justify-between pr-3">
                   <div>
                     <button
                       className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
