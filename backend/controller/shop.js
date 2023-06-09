@@ -23,7 +23,7 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
       fs.unlink(filePath, (err) => {
         if (err) {
           console.log(err);
-          res.status(500).json({ message: "Error deleting file" });
+          res.status(500).json({ message: "Dosya silinirken hata oluştu" });
         }
       });
       return next(new ErrorHandler("User already exists", 400));
@@ -49,12 +49,12 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
     try {
       await sendMail({
         email: seller.email,
-        subject: "Activate your Shop",
-        message: `Hello ${seller.name}, please click on the link to activate your shop: ${activationUrl}`,
+        subject: "Mağazanızı etkinleştirin",
+        message: `Merhaba ${seller.name}, mağazanızı etkinleştirmek için bağlantıya tıklayın: ${activationUrl}`,
       });
       res.status(201).json({
         success: true,
-        message: `please check your email:- ${seller.email} to activate your shop!`,
+        message: `Mağazanızı aktive etmek için lütfen mailinizi kontrol edin:- ${seller.email}`,
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -84,7 +84,7 @@ router.post(
       );
 
       if (!newSeller) {
-        return next(new ErrorHandler("Invalid token", 400));
+        return next(new ErrorHandler("Geçersiz token", 400));
       }
       const { name, email, password, avatar, zipCode, address, phoneNumber } =
         newSeller;
@@ -92,7 +92,7 @@ router.post(
       let seller = await Shop.findOne({ email });
 
       if (seller) {
-        return next(new ErrorHandler("User already exists", 400));
+        return next(new ErrorHandler("Kullanıcı zaten var", 400));
       }
 
       seller = await Shop.create({
@@ -120,20 +120,20 @@ router.post(
       const { email, password } = req.body;
 
       if (!email || !password) {
-        return next(new ErrorHandler("Please provide the all fields!", 400));
+        return next(new ErrorHandler("Lütfen tüm alanları sağlayın!", 400));
       }
 
       const user = await Shop.findOne({ email }).select("+password");
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists!", 400));
+        return next(new ErrorHandler("Kullanıcı mevcut değil!", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct information", 400)
+          new ErrorHandler("Lütfen doğru bilgileri sağlayın", 400)
         );
       }
 
@@ -153,7 +153,7 @@ router.get(
       const seller = await Shop.findById(req.seller._id);
 
       if (!seller) {
-        return next(new ErrorHandler("User doesn't exists", 400));
+        return next(new ErrorHandler("Kullanıcı mevcut değil", 400));
       }
 
       res.status(200).json({
@@ -177,7 +177,7 @@ router.get(
       });
       res.status(201).json({
         success: true,
-        message: "Log out successful!",
+        message: "Çıkış başarılı!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -241,7 +241,7 @@ router.put(
       const shop = await Shop.findOne(req.seller._id);
 
       if (!shop) {
-        return next(new ErrorHandler("User not found", 400));
+        return next(new ErrorHandler("Kullanıcı Bulunamadı!", 400));
       }
 
       shop.name = name;
@@ -293,7 +293,7 @@ router.delete(
 
       if (!seller) {
         return next(
-          new ErrorHandler("Seller is not available with this id", 400)
+          new ErrorHandler("Satıcı bu kimliğe sahip değil", 400)
         );
       }
 
@@ -301,7 +301,7 @@ router.delete(
 
       res.status(201).json({
         success: true,
-        message: "Seller deleted successfully!",
+        message: "Satıcı başarıyla silindi!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -340,7 +340,7 @@ router.delete(
       const seller = await Shop.findById(req.seller._id);
 
       if (!seller) {
-        return next(new ErrorHandler("Seller not found with this id", 400));
+        return next(new ErrorHandler("Bu kimliğe sahip bir satıcı bulunamadı.", 400));
       }
 
       seller.withdrawMethod = null;
