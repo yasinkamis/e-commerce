@@ -6,6 +6,7 @@ const { isAuthenticated, isSeller, isAdmin } = require("../middleware/auth");
 const Order = require("../model/order");
 const Shop = require("../model/shop");
 const Product = require("../model/product");
+const { format } = require('date-fns');
 
 // create new order
 router.post(
@@ -59,8 +60,8 @@ router.get(
         .then((result) => {
           return result.map((item) => ({
             ...item.toObject(),
-            start: item.createdAt,
-            end: new Date(item.createdAt.getTime() + ((Number(item.cart[0].stock)) * 24 * 60 * 60 * 1000)), // Süreyi günlere çevirerek ekliyoruz
+            start: format(item.createdAt , 'dd/MM/yyyy'),
+            end: format(new Date(item.createdAt.getTime() + ((Number(item.cart[0].stock)) * 24 * 60 * 60 * 1000)), 'dd/MM/yyyy'), // Süreyi günlere çevirerek ekliyoruz
           }));
         });
 
@@ -86,8 +87,8 @@ router.get(
       }).then((result) => {
         return result.map((item) => ({
           ...item.toObject(),
-          start: item.createdAt,
-          end: new Date(item.createdAt.getTime() + ((Number(item.cart[0].stock)) * 24 * 60 * 60 * 1000)), // Süreyi günlere çevirerek ekliyoruz
+          start: format(item.createdAt , 'dd/MM/yyyy'),
+            end: format(new Date(item.createdAt.getTime() + ((Number(item.cart[0].stock)) * 24 * 60 * 60 * 1000)), 'dd/MM/yyyy'), // Süreyi günlere çevirerek ekliyoruz
         }));
       });
 
