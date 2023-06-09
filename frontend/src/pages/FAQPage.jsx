@@ -86,7 +86,7 @@ const Faq = () => {
             onClick={() => toggleTab(3)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-              How do I track my order?
+            Siparişimi nasıl takip ederim?
             </span>
             {activeTab === 3 ? (
               <svg
@@ -135,7 +135,7 @@ const Faq = () => {
             onClick={() => toggleTab(4)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-              How do I contact customer support?
+            Müşteri desteğiyle nasıl iletişim kurabilirim?
             </span>
             {activeTab === 4 ? (
               <svg
@@ -184,7 +184,7 @@ const Faq = () => {
             onClick={() => toggleTab(5)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-              Can I change or cancel my order?
+            Siparişimi değiştirebilir veya iptal edebilir miyim?
             </span>
             {activeTab === 5 ? (
               <svg
@@ -281,7 +281,7 @@ const Faq = () => {
             onClick={() => toggleTab(7)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-              What payment methods do you accept?
+            Hangi ödeme yöntemlerini kabul ediyorsunuz?
             </span>
             {activeTab === 7 ? (
               <svg

@@ -98,7 +98,7 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
 
-          <div className={`${styles.button}`}>
+          <div className={`${styles.button}`} style={{visibility: !isAuthenticated && "hidden"}}>
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#fff] flex items-center">
                 {isSeller ? "Panele Git" : "Become Seller"}{" "}
