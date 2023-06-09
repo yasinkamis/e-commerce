@@ -20,6 +20,7 @@ const CreateProduct = () => {
   const [originalPrice, setOriginalPrice] = useState();
   const [discountPrice, setDiscountPrice] = useState();
   const [stock, setStock] = useState();
+  const [period, setPeriod] = useState();
 
   useEffect(() => {
     if (error) {
@@ -56,6 +57,7 @@ const CreateProduct = () => {
     newForm.append("originalPrice", originalPrice);
     newForm.append("discountPrice", discountPrice);
     newForm.append("stock", stock);
+    newForm.append("rentTime", period);
     newForm.append("shopId", seller._id);
     dispatch(createProduct(newForm));
   };
@@ -77,7 +79,7 @@ const CreateProduct = () => {
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setName(e.target.value)}
             placeholder=" Ürün İsmi Giriniz..."
-            />
+          />
         </div>
         <br />
         <div>
@@ -166,6 +168,21 @@ const CreateProduct = () => {
             onChange={(e) => setStock(e.target.value)}
             placeholder="Stok Giriniz..."
           />
+        </div>
+        <br />
+        <div>
+          <label className="pb-2">
+            Dönem<span className="text-red-500">*</span>
+          </label>
+          <select
+            value={period}
+            onChange={(e) => setPeriod(e.target.value)}
+            className="mt-2 block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          >
+            <option value={0}>Günlük</option>
+            <option value={1}>Haftalık</option>
+            <option value={2}>Aylık</option>
+          </select>
         </div>
         <br />
         <div>
