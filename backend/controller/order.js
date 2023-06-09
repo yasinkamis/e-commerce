@@ -74,7 +74,7 @@ router.get(
   })
 );
 
-// get all orders of seller
+// get all orders of seller --1
 router.get(
   "/get-seller-all-orders/:shopId",
   catchAsyncErrors(async (req, res, next) => {
@@ -83,6 +83,12 @@ router.get(
         "cart.shopId": req.params.shopId,
       }).sort({
         createdAt: -1,
+      }).then((result) => {
+        return result.map((item) => ({
+          ...item.toObject(),
+          start: item.createdAt,
+          end: new Date(item.createdAt.getTime() + ((Number(item.cart[0].stock)) * 24 * 60 * 60 * 1000)), // Süreyi günlere çevirerek ekliyoruz
+        }));
       });
 
       res.status(200).json({
