@@ -20,6 +20,7 @@ import { toast } from "react-toastify";
 import Ratings from "./Ratings";
 import axios from "axios";
 import { Button } from "@mui/material";
+import styled from "@emotion/styled";
 
 const ProductDetails = ({ data }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -151,13 +152,13 @@ const ProductDetails = ({ data }) => {
               <div className="w-full 800px:w-[50%] pt-5 pl-5">
                 <h1 className={`${styles.productTitle}`}>{data.name}</h1>
                 <p>{data.description}</p>
-                <Button
+                <BootstrapButton
                   variant="outlined"
                   startIcon={<LocalOfferIcon />}
                   sx={{ width: "100%", my: 2, pointerEvents: "none" }}
                 >
                   Günlük Fiyat
-                </Button>
+                </BootstrapButton>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
                     {data.discountPrice}₺
@@ -166,20 +167,20 @@ const ProductDetails = ({ data }) => {
                     {data.originalPrice ? data.originalPrice + "₺" : null}
                   </h3>
                 </div>
-                <h6 className="mt-12 font-bold">Gün:</h6>
+                <h6 className="mt-12 font-bold text-[#D14D72]">Gün:</h6>
                 <div className="flex items-center mt-2 justify-between pr-3">
                   <div>
                     <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
+                      className="bg-[#D14D72] text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
                       onClick={decrementCount}
                     >
                       -
                     </button>
-                    <span className="bg-gray-200 text-gray-800 font-medium px-4 py-[11px]">
+                    <span className="bg-[#FFABAB] text-[#D14D72] font-medium px-4 py-[11px]">
                       {count}
                     </span>
                     <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
+                      className="bg-[#D14D72] text-white font-bold rounded-r px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
                       onClick={incrementCount}
                     >
                       +
@@ -199,8 +200,8 @@ const ProductDetails = ({ data }) => {
                         size={30}
                         className="cursor-pointer"
                         onClick={() => addToWishlistHandler(data)}
-                        color={click ? "red" : "#333"}
                         title="Add to wishlist"
+                        color="#D14D72"
                       />
                     )}
                   </div>
@@ -396,3 +397,11 @@ const ProductDetailsInfo = ({
 };
 
 export default ProductDetails;
+
+const BootstrapButton = styled(Button)({
+  border: "1px solid",
+  lineHeight: 1.5,
+  backgroundColor: "tranparent",
+  borderColor: "#D14D72",
+  color: "#D14D72",
+});

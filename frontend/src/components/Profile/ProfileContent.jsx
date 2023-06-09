@@ -82,7 +82,7 @@ const ProfileContent = ({ active }) => {
             <div className="relative">
               <img
                 src={`${backend_url}/${user?.avatar}`}
-                className="w-[150px] h-[150px] rounded-full object-cover border-[3px] border-[#3ad132]"
+                className="w-[150px] h-[150px] rounded-full object-cover border-[3px] border-[#D14D72]"
                 alt=""
               />
               <div className="w-[30px] h-[30px] bg-[#E3E9EE] rounded-full flex items-center justify-center cursor-pointer absolute bottom-[5px] right-[5px]">
@@ -149,7 +149,7 @@ const ProfileContent = ({ active }) => {
                 </div>
               </div>
               <input
-                className={`w-[250px] h-[40px] border border-[#3a24db] text-center text-[#3a24db] rounded-[3px] mt-8 cursor-pointer`}
+                className={`w-[250px] h-[40px] border border-[#D14D72] text-center text-[#D14D72] rounded-[3px] mt-8 cursor-pointer`}
                 required
                 value="Kaydet"
                 type="submit"
@@ -519,9 +519,9 @@ const ChangePassword = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
             <input
-              className={`w-[95%] h-[40px] border border-[#3a24db] text-center text-[#3a24db] rounded-[3px] mt-8 cursor-pointer`}
+              className={`w-[95%] h-[40px] border border-[#D14D72] text-center text-[#D14D72] rounded-[3px] mt-8 cursor-pointer`}
               required
-              value="Update"
+              value="Güncelle"
               type="submit"
             />
           </div>

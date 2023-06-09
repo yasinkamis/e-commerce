@@ -37,7 +37,7 @@ const Wishlist = ({ setOpenWishlist }) => {
                 color="#D14D72"
               />
             </div>
-            <h5 className="text-[#D14D72]">Wishlist Items is empty!</h5>
+            <h5 className="text-[#D14D72]">Favorileriniz Boş!</h5>
           </div>
         ) : (
           <>

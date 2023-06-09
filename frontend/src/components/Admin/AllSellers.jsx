@@ -145,7 +145,7 @@ const AllSellers = () => {
                   className={`${styles.button} text-white text-[18px] !h-[42px] ml-4`}
                   onClick={() =>  setOpen(false) || handleDelete(userId)}
                 >
-                  confirm
+                  onay
                 </div>
               </div>
             </div>

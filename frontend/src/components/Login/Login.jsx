@@ -35,9 +35,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#D14D72] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
           Hesabınıza Giriş Yapabilirsiniz
         </h2>
       </div>
@@ -47,7 +47,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Email adresi
               </label>
@@ -59,14 +59,14 @@ const Login = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-[#D14D72] focus:outline-none focus:ring-blue-500 focus:border-[#D14D72] sm:text-sm"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Şifre
               </label>
@@ -78,19 +78,21 @@ const Login = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-[#D14D72] focus:outline-none focus:ring-blue-500 focus:border-[#D14D72] sm:text-sm"
                 />
                 {visible ? (
                   <AiOutlineEye
                     className="absolute right-2 top-2 cursor-pointer"
                     size={25}
                     onClick={() => setVisible(false)}
+                    color="#D14D72"
                   />
                 ) : (
                   <AiOutlineEyeInvisible
                     className="absolute right-2 top-2 cursor-pointer"
                     size={25}
                     onClick={() => setVisible(true)}
+                    color="#D14D72"
                   />
                 )}
               </div>
@@ -101,11 +103,11 @@ const Login = () => {
                   type="checkbox"
                   name="remember-me"
                   id="remember-me"
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-[#D14D72] focus:ring-blue-500 border-[#D14D72] rounded"
                 />
                 <label
                   htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
+                  className="ml-2 block text-sm text-[#D14D72]"
                 >
                   Beni Hatırla
                 </label>
@@ -113,7 +115,7 @@ const Login = () => {
               <div className="text-sm">
                 <a
                   href=".forgot-password"
-                  className="font-medium text-blue-600 hover:text-blue-500"
+                  className="font-medium text-[#D14D72] hover:text-[#D14D72]"
                 >
                   Şifremi Unuttum
                 </a>
@@ -122,14 +124,14 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#D14D72] hover:bg-[#D14D72]"
               >
                 Kaydet
               </button>
             </div>
             <div className={`${styles.noramlFlex} w-full`}>
               <h4>Hesabınız Yok Mu?</h4>
-              <Link to="/sign-up" className="text-blue-600 pl-2">
+              <Link to="/sign-up" className="text-[#D14D72] pl-2">
                 Kayıt Ol
               </Link>
             </div>

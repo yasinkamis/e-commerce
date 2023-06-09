@@ -222,11 +222,7 @@ const Header = ({ activeHeading }) => {
           </div>
           <div>
             <Link to="/">
-              <img
-                src="https://shopo.quomodothemes.website/assets/images/logo.svg"
-                alt=""
-                className="mt-3 cursor-pointer"
-              />
+              <img src={Logo} style={{ width: "80px" }} alt="" className="mt-3 cursor-pointer"/>
             </Link>
           </div>
           <div>

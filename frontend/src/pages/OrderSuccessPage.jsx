@@ -25,7 +25,7 @@ const Success = () => {
   };
   return (
     <div>
-      <Lottie options={defaultOptions} width={300} height={300} />
+      <Lottie options={defaultOptions} width={300} height={300} color="#D14D72"/>
       <h5 className="text-center mb-14 text-[25px] text-[#000000a1]">
         Siparişiniz Başarılı 😍
       </h5>
