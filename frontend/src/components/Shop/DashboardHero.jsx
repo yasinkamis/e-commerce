@@ -38,7 +38,7 @@ const DashboardHero = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Ürün Adedi",
+      headerName: "Dönem Sayısı",
       type: "number",
       minWidth: 130,
       flex: 0.7,
