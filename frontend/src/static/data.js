@@ -1,6 +1,5 @@
 import Home from "../Assests/categories/home.png";
 import Cadir from "../Assests/categories/Cadir.png";
-import Tvses from "../Assests/categories/Tvses.png";
 
 // navigation Data
 export const navItems = [
@@ -232,7 +231,7 @@ export const categoriesData = [
     id: 6,
     title: "Tv/Ses ve Görüntü Sistemleri",
     subTitle: "",
-    image_Url: Tvses,
+    image_Url: "asdasd",
   },
   {
     id: 7,
