@@ -24,7 +24,7 @@ const DashboardSideBar = ({ active }) => {
               active === 1 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Dashboard
+            Panel
           </h5>
         </Link>
       </div>
@@ -40,7 +40,7 @@ const DashboardSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Orders
+            Tüm Siparişler
           </h5>
         </Link>
       </div>
@@ -53,7 +53,7 @@ const DashboardSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Products
+            Tüm Ürünler
           </h5>
         </Link>
       </div>
@@ -72,12 +72,12 @@ const DashboardSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Product
+            Ürün Oluştur
           </h5>
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+     { /*<div className="w-full flex items-center p-4">
         <Link to="/dashboard-events" className="w-full flex items-center">
           <MdOutlineLocalOffer
             size={30}
@@ -91,9 +91,9 @@ const DashboardSideBar = ({ active }) => {
             All Events
           </h5>
         </Link>
-      </div>
+      </div>*/}
 
-      <div className="w-full flex items-center p-4">
+{ /*<div className="w-full flex items-center p-4">
         <Link to="/dashboard-create-event" className="w-full flex items-center">
           <VscNewFile
             size={30}
@@ -107,7 +107,7 @@ const DashboardSideBar = ({ active }) => {
             Create Event
           </h5>
         </Link>
-      </div>
+          </div>*/}
 
       <div className="w-full flex items-center p-4">
         <Link
@@ -123,7 +123,7 @@ const DashboardSideBar = ({ active }) => {
               active === 7 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Withdraw Money
+            Para Çekme Talepleri
           </h5>
         </Link>
       </div>
@@ -139,7 +139,7 @@ const DashboardSideBar = ({ active }) => {
               active === 8 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Shop Inbox
+            Mesajlar
           </h5>
         </Link>
       </div>
@@ -155,7 +155,7 @@ const DashboardSideBar = ({ active }) => {
               active === 9 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Discount Codes
+            İndirim Kodları
           </h5>
         </Link>
       </div>
@@ -171,7 +171,7 @@ const DashboardSideBar = ({ active }) => {
               active === 10 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Refunds
+            İade Talepleri
           </h5>
         </Link>
       </div>
@@ -187,7 +187,7 @@ const DashboardSideBar = ({ active }) => {
               active === 11 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Settings
+            Ayarlar
           </h5>
         </Link>
       </div>

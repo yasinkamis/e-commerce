@@ -108,7 +108,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   onClick={handleMessageSubmit}
                 >
                   <span className="text-[#fff] flex items-center">
-                    Send Message <AiOutlineMessage className="ml-1" />
+                    Mesaj Gönder <AiOutlineMessage className="ml-1" />
                   </span>
                 </div>
               </div>
@@ -176,7 +176,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   onClick={() => addToCartHandler(data._id)}
                 >
                   <span className="text-[#fff] flex items-center">
-                    Add to cart <AiOutlineShoppingCart className="ml-1" />
+                    Sepete Ekle <AiOutlineShoppingCart className="ml-1" />
                   </span>
                 </div>
               </div>
