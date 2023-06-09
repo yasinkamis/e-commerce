@@ -1,6 +1,14 @@
+import Telefon from "../Assests/categories/Telefon.png";
+import Tablet from "../Assests/categories/Tablet.png";
+import Laptop from "../Assests/categories/Laptop.png";
+import Pc from "../Assests/categories/Pc.png";
+import Konsol from "../Assests/categories/Konsol.png";
+import Televizyon from "../Assests/categories/Televizyon.png";
+import Hobi from "../Assests/categories/Hobi.png";
+import Kamera from "../Assests/categories/Kamera.png";
+
 import Home from "../Assests/categories/home.png";
 import Cadir from "../Assests/categories/Cadir.png";
-
 // navigation Data
 export const navItems = [
   {
@@ -194,50 +202,46 @@ export const brandingData = [
 export const categoriesData = [
   {
     id: 1,
-    title: "Bilgisayar ve Laptop",
+    title: "Telefon",
     subTitle: "",
-    image_Url:
-      "https://cdn.shopify.com/s/files/1/1706/9177/products/NEWAppleMacbookProwithM1ProChip14InchLaptop2021ModelMKGQ3LL_A_16GB_1TBSSD_custommacbd.jpg?v=1659592838",
+    image_Url: Telefon,
   },
   {
     id: 2,
-    title: "Kozmetik ve Kişisel Bakım",
+    title: "Tablet",
     subTitle: "",
-    image_Url:
-      "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-07/kosme1.png",
+    image_Url: Tablet,
   },
   {
     id: 3,
-    title: "Ev ve Yaşam",
+    title: "Laptop",
     subTitle: "",
-    image_Url:
-      "https://w7.pngwing.com/pngs/704/311/png-transparent-consumer-electronics-vacuum-cleaner-home-appliance-television-home-electronics-television-electronics-vacuum-cleaner.png",
+    image_Url: Laptop,
   },
   {
     id: 4,
-    title: "Oyun Konsolları",
+    title: "Masaüstü Bilgisayar",
     subTitle: "",
-    image_Url:
-      "https://www.shift4shop.com/2015/images/industries/clothing/clothing-apparel.png",
+    image_Url: Pc,
   },
   {
     id: 5,
-    title: " Telefon ve Tablet",
+    title: "Oyun Konsolu",
     subTitle: "",
-    image_Url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
+    image_Url: Konsol,
   },
+
   {
     id: 6,
-    title: "Tv/Ses ve Görüntü Sistemleri",
+    title: "Televizyon",
     subTitle: "",
-    image_Url: "asdasd",
+    image_Url: Televizyon,
   },
   {
     id: 7,
-    title: "Araç Ürünleri",
+    title: "Müzik Aletleri & Hobi",
     subTitle: "",
-    image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
+    image_Url: Hobi,
   },
   {
     id: 8,
@@ -255,8 +259,7 @@ export const categoriesData = [
     id: 10,
     title: "Diğer",
     subTitle: "",
-    image_Url:
-      "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    image_Url: Kamera,
   },
 ];
 
