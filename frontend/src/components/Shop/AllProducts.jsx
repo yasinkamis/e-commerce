@@ -39,7 +39,7 @@ const AllProducts = () => {
     },
     {
       field: "Stock",
-      headerName: "Stok",
+      headerName: "Dönem Süresi",
       type: "number",
       minWidth: 80,
       flex: 0.5,

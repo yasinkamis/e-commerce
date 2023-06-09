@@ -54,9 +54,9 @@ const ShopCreate = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#D14D72] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
           Kiralatan Hesabı Oluştur
         </h2>
       </div>
@@ -66,7 +66,7 @@ const ShopCreate = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Kiralatan Adı
               </label>
@@ -77,7 +77,7 @@ const ShopCreate = () => {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -85,7 +85,7 @@ const ShopCreate = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Telefon Numarası
               </label>
@@ -96,7 +96,7 @@ const ShopCreate = () => {
                   required
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -104,7 +104,7 @@ const ShopCreate = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Email adresi
               </label>
@@ -116,7 +116,7 @@ const ShopCreate = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -124,7 +124,7 @@ const ShopCreate = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Adres
               </label>
@@ -135,7 +135,7 @@ const ShopCreate = () => {
                   required
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -143,7 +143,7 @@ const ShopCreate = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Posta Kodu
               </label>
@@ -154,7 +154,7 @@ const ShopCreate = () => {
                   required
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -162,7 +162,7 @@ const ShopCreate = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               >
                 Password
               </label>
@@ -174,7 +174,7 @@ const ShopCreate = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
                 {visible ? (
                   <AiOutlineEye
@@ -195,7 +195,7 @@ const ShopCreate = () => {
             <div>
               <label
                 htmlFor="avatar"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-[#D14D72]"
               ></label>
               <div className="mt-2 flex items-center">
                 <span className="inline-block h-8 w-8 rounded-full overflow-hidden">
@@ -206,12 +206,12 @@ const ShopCreate = () => {
                       className="h-full w-full object-cover rounded-full"
                     />
                   ) : (
-                    <RxAvatar className="h-8 w-8" />
+                    <RxAvatar className="h-8 w-8" color="#D14D72"/>
                   )}
                 </span>
                 <label
                   htmlFor="file-input"
-                  className="ml-5 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                  className="ml-5 flex items-center justify-center px-4 py-2 border border-[#D14D72] rounded-md shadow-sm text-sm font-medium text-[#D14D72] bg-white"
                 >
                   <span>Upload a file</span>
                   <input
@@ -228,14 +228,14 @@ const ShopCreate = () => {
             <div>
               <button
                 type="submit"
-                className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#D14D72] hover:bg-[#D14D72]"
               >
                 Kayıt Ol
               </button>
             </div>
             <div className={`${styles.noramlFlex} w-full`}>
               <h4>Zaten bir hesabın var mı?</h4>
-              <Link to="/shop-login" className="text-blue-600 pl-2">
+              <Link to="/shop-login" className="text-[#D14D72] pl-2">
                 Giriş Yap
               </Link>
             </div>

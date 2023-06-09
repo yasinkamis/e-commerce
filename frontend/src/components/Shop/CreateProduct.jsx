@@ -158,7 +158,7 @@ const CreateProduct = () => {
         <br />
         <div>
           <label className="pb-2">
-            Ürün Stok<span className="text-red-500">*</span>
+          Dönem Süresi<span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -166,7 +166,7 @@ const CreateProduct = () => {
             value={stock}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setStock(e.target.value)}
-            placeholder="Stok Giriniz..."
+            placeholder="Dönem Süresi Giriniz..."
           />
         </div>
         <br />
