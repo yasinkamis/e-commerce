@@ -77,7 +77,7 @@ const ShopCreate = () => {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#D14D72] focus:border-[#D14D72] sm:text-sm"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ const ShopCreate = () => {
                   required
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#D14D72] focus:border-[#D14D72] sm:text-sm"
                 />
               </div>
             </div>
@@ -116,7 +116,7 @@ const ShopCreate = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#D14D72] focus:border-[#D14D72] sm:text-sm"
                 />
               </div>
             </div>
@@ -135,7 +135,7 @@ const ShopCreate = () => {
                   required
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#D14D72] focus:border-[#D14D72] sm:text-sm"
                 />
               </div>
             </div>
@@ -154,7 +154,7 @@ const ShopCreate = () => {
                   required
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#D14D72] focus:border-[#D14D72] sm:text-sm"
                 />
               </div>
             </div>
@@ -174,13 +174,14 @@ const ShopCreate = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-[#D14D72] rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#D14D72] focus:border-[#D14D72] sm:text-sm"
                 />
                 {visible ? (
                   <AiOutlineEye
                     className="absolute right-2 top-2 cursor-pointer"
                     size={25}
                     onClick={() => setVisible(false)}
+                    color="#D14D72"
                   />
                 ) : (
                   <AiOutlineEyeInvisible
