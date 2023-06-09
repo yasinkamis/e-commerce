@@ -26,7 +26,7 @@ const Faq = () => {
 
   return (
     <div className={`${styles.section} my-8`}>
-      <h2 className="text-3xl font-bold text-[#D14D72] mb-8">FAQ</h2>
+      <h2 className="text-3xl font-bold text-[#D14D72] mb-8">SSS</h2>
       <div className="mx-auto space-y-4">
         {/* single Faq */}
 
@@ -86,7 +86,7 @@ const Faq = () => {
             onClick={() => toggleTab(3)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-            Siparişimi nasıl takip ederim?
+              Siparişimi nasıl takip ederim?
             </span>
             {activeTab === 3 ? (
               <svg
@@ -135,7 +135,7 @@ const Faq = () => {
             onClick={() => toggleTab(4)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-            Müşteri desteğiyle nasıl iletişim kurabilirim?
+              Müşteri desteğiyle nasıl iletişim kurabilirim?
             </span>
             {activeTab === 4 ? (
               <svg
@@ -184,7 +184,7 @@ const Faq = () => {
             onClick={() => toggleTab(5)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-            Siparişimi değiştirebilir veya iptal edebilir miyim?
+              Siparişimi değiştirebilir veya iptal edebilir miyim?
             </span>
             {activeTab === 5 ? (
               <svg
@@ -281,7 +281,7 @@ const Faq = () => {
             onClick={() => toggleTab(7)}
           >
             <span className="text-lg font-medium text-[#D14D72]">
-            Hangi ödeme yöntemlerini kabul ediyorsunuz?
+              Hangi ödeme yöntemlerini kabul ediyorsunuz?
             </span>
             {activeTab === 7 ? (
               <svg

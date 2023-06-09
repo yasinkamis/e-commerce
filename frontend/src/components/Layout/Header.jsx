@@ -98,10 +98,13 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
 
-          <div className={`${styles.button}`} style={{visibility: !isAuthenticated && "hidden"}}>
+          <div
+            className={`${styles.button}`}
+            style={{ visibility: !isAuthenticated && "hidden" }}
+          >
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#fff] flex items-center">
-                {isSeller ? "Panele Git" : "Become Seller"}{" "}
+                {isSeller ? "Panele Git" : "Sen de kirala"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
@@ -222,7 +225,12 @@ const Header = ({ activeHeading }) => {
           </div>
           <div>
             <Link to="/">
-              <img src={Logo} style={{ width: "80px" }} alt="" className="mt-3 cursor-pointer"/>
+              <img
+                src={Logo}
+                style={{ width: "80px" }}
+                alt=""
+                className="mt-3 cursor-pointer"
+              />
             </Link>
           </div>
           <div>
