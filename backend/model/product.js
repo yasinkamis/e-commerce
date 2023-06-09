@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please enter your product name!"],
+    required: [true, "Lütfen ürün adınızı giriniz!"],
   },
   description: {
     type: String,
-    required: [true, "Please enter your product description!"],
+    required: [true, "Lütfen ürün açıklamanızı giriniz!"],
   },
   category: {
     type: String,
-    required: [true, "Please enter your product category!"],
+    required: [true, "Lütfen ürün kategorinizi giriniz!"],
   },
   tags: {
     type: String,
@@ -21,11 +21,11 @@ const productSchema = new mongoose.Schema({
   },
   discountPrice: {
     type: Number,
-    required: [true, "Please enter your product price!"],
+    required: [true, "Lütfen ürün fiyatınızı giriniz!"],
   },
   stock: {
     type: Number,
-    required: [true, "Please enter your product stock!"],
+    required: [true, "Lütfen ürün stoğunuzu giriniz!"],
   },
   images: [
     {
@@ -73,7 +73,7 @@ const productSchema = new mongoose.Schema({
   },
   rentTime: {
     type: Number,
-    required: [true, "Please enter your Rent Time!"],
+    required: [true, "Lütfen Kiralama Sürenizi giriniz!"],
   },
 });
 

@@ -74,7 +74,7 @@ router.get(
   })
 );
 
-// get all orders of seller --1
+// get all orders of seller
 router.get(
   "/get-seller-all-orders/:shopId",
   catchAsyncErrors(async (req, res, next) => {
@@ -110,7 +110,7 @@ router.put(
       const order = await Order.findById(req.params.id);
 
       if (!order) {
-        return next(new ErrorHandler("Order not found with this id", 400));
+        return next(new ErrorHandler("Bu kimliğe sahip sipariş bulunamadı.", 400));
       }
       if (req.body.status === "Transferred to delivery partner") {
         order.cart.forEach(async (o) => {
@@ -164,7 +164,7 @@ router.put(
       const order = await Order.findById(req.params.id);
 
       if (!order) {
-        return next(new ErrorHandler("Order not found with this id", 400));
+        return next(new ErrorHandler("Bu kimliğe sahip sipariş bulunamadı.", 400));
       }
 
       order.status = req.body.status;
@@ -174,7 +174,7 @@ router.put(
       res.status(200).json({
         success: true,
         order,
-        message: "Order Refund Request successfully!",
+        message: "Geri Ödeme Talebi başarıyla sipariş edildi!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -191,7 +191,7 @@ router.put(
       const order = await Order.findById(req.params.id);
 
       if (!order) {
-        return next(new ErrorHandler("Order not found with this id", 400));
+        return next(new ErrorHandler("Bu kimliğe sahip sipariş bulunamadı", 400));
       }
 
       order.status = req.body.status;
@@ -200,7 +200,7 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: "Order Refund successfull!",
+        message: "Sipariş İadesi başarılı!",
       });
 
       if (req.body.status === "Refund Success") {

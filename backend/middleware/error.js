@@ -12,19 +12,19 @@ module.exports = (err, req, res, next) => {
 
   // Duplicate key error
   if (err.code === 11000) {
-    const message = `Duplicate key ${Object.keys(err.keyValue)} Entered`;
+    const message = `Yinelenen anahtar Girildi: ${Object.keys(err.keyValue)}`;
     err = new ErrorHandler(message, 400);
   }
 
   // wrong jwt error
   if (err.name === "JsonWebTokenError") {
-    const message = `Your url is invalid please try again letter`;
+    const message = `URL'niz geçersiz, lütfen tekrar deneyin!`;
     err = new ErrorHandler(message, 400);
   }
 
   // jwt expired
   if (err.name === "TokenExpiredError") {
-    const message = `Your Url is expired please try again letter!`;
+    const message = `URL'nizin süresi doldu, lütfen tekrar deneyin!`;
     err = new ErrorHandler(message, 400);
   }
 

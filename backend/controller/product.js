@@ -81,12 +81,12 @@ router.delete(
       const product = await Product.findByIdAndDelete(productId);
 
       if (!product) {
-        return next(new ErrorHandler("Product not found with this id!", 500));
+        return next(new ErrorHandler("Bu kimliğe sahip ürün bulunamadı!", 500));
       }
 
       res.status(201).json({
         success: true,
-        message: "Product Deleted successfully!",
+        message: "Ürün başarıyla silindi!",
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));
@@ -160,7 +160,7 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: "Reviwed succesfully!",
+        message: "Başarıyla incelendi!",
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));
