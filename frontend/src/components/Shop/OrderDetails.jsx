@@ -129,7 +129,7 @@ const OrderDetails = () => {
           <h4 className="pt-3 text-[20px]">Ödeme Bilgisi:</h4>
           <h4>
             Status:{" "}
-            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not Paid"}
+            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Bilgi Bulunamadı"}
           </h4>
         </div>
       </div>

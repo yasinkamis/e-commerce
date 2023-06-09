@@ -123,7 +123,12 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   startIcon={<LocalOfferIcon />}
                   sx={{ width: "100%", my: 2, pointerEvents: "none" }}
                 >
-                  Günlük Fiyat
+                  {data.rentTime === 0
+                    ? "Günlük"
+                    : data.rentTime === 1
+                    ? "Haftalık"
+                    : "Aylık"}{" "}
+                  Fiyat
                 </BootstrapButton>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
@@ -133,7 +138,15 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     {data.originalPrice ? data.originalPrice + "$" : null}
                   </h3>
                 </div>
-                <h6 className="mt-12 font-bold text-[#D14D72]">Gün:</h6>
+                <h6 className="mt-12 font-bold text-[#D14D72]">
+                  {" "}
+                  {data.rentTime === 0
+                    ? "Gün"
+                    : data.rentTime === 1
+                    ? "Hafta"
+                    : "Ay"}
+                  :
+                </h6>
                 <div className="flex items-center mt-2 justify-between pr-3">
                   <div>
                     <button

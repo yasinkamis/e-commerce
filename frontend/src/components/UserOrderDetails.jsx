@@ -70,8 +70,8 @@ const UserOrderDetails = () => {
     <div className={`py-4 min-h-screen ${styles.section}`}>
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
-          <BsFillBagFill size={30} color="crimson" />
-          <h1 className="pl-2 text-[25px]">Order Details</h1>
+          <BsFillBagFill size={30} color="#D14D72" />
+          <h1 className="pl-2 text-[25px]">Sipariş Detay</h1>
         </div>
       </div>
 
@@ -223,7 +223,7 @@ const UserOrderDetails = () => {
           <h4 className="pt-3 text-[20px]">Ödeme Bilgisi:</h4>
           <h4>
             Durum:{" "}
-            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not Paid"}
+            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Bilgi Bulunamadı"}
           </h4>
           <br />
           {data?.status === "Delivered" && (

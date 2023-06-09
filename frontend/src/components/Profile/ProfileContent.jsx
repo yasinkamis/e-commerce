@@ -221,13 +221,18 @@ const AllOrders = () => {
       },
     },
     {
-      field: "itemsQty",
-      headerName: "Ürün Adedi",
-      type: "number",
+      field: "startData",
+      headerName: "Başlama Tarihi",
+      type: "date",
       minWidth: 130,
-      flex: 0.7,
+      flex: 0.8,
+    },    {
+      field: "endData",
+      headerName: "Bitiş Tarihi",
+      type: "date",
+      minWidth: 130,
+      flex: 0.8,
     },
-
     {
       field: "total",
       headerName: "Toplam",
@@ -235,7 +240,6 @@ const AllOrders = () => {
       minWidth: 130,
       flex: 0.8,
     },
-
     {
       field: " ",
       flex: 1,
@@ -263,7 +267,8 @@ const AllOrders = () => {
     orders.forEach((item) => {
       row.push({
         id: item._id,
-        itemsQty: item.cart.length,
+        startData: item.start,
+        endData: item.end,
         total: "TRY₺ " + item.totalPrice,
         status: item.status,
       });
@@ -308,13 +313,18 @@ const AllRefundOrders = () => {
       },
     },
     {
-      field: "itemsQty",
-      headerName: "Ürün Adedi",
-      type: "number",
+      field: "startData",
+      headerName: "Başlama Tarihi",
+      type: "date",
       minWidth: 130,
-      flex: 0.7,
+      flex: 0.8,
+    },    {
+      field: "endData",
+      headerName: "Bitiş Tarihi",
+      type: "date",
+      minWidth: 130,
+      flex: 0.8,
     },
-
     {
       field: "total",
       headerName: "Toplam",
@@ -322,7 +332,6 @@ const AllRefundOrders = () => {
       minWidth: 130,
       flex: 0.8,
     },
-
     {
       field: " ",
       flex: 1,
@@ -350,7 +359,8 @@ const AllRefundOrders = () => {
    eligibleOrders.forEach((item) => {
       row.push({
         id: item._id,
-        itemsQty: item.cart.length,
+        startData: item.start,
+        endData: item.end,
         total: "TRY₺ " + item.totalPrice,
         status: item.status,
       });
@@ -393,13 +403,18 @@ const TrackOrder = () => {
       },
     },
     {
-      field: "itemsQty",
-      headerName: "Ürün Adedi",
-      type: "number",
+      field: "startData",
+      headerName: "Başlama Tarihi",
+      type: "date",
       minWidth: 130,
-      flex: 0.7,
+      flex: 0.8,
+    },    {
+      field: "endData",
+      headerName: "Bitiş Tarihi",
+      type: "date",
+      minWidth: 130,
+      flex: 0.8,
     },
-
     {
       field: "total",
       headerName: "Toplam",
@@ -407,7 +422,6 @@ const TrackOrder = () => {
       minWidth: 130,
       flex: 0.8,
     },
-
     {
       field: " ",
       flex: 1,
@@ -435,7 +449,8 @@ const TrackOrder = () => {
     orders.forEach((item) => {
       row.push({
         id: item._id,
-        itemsQty: item.cart.length,
+        startData: item.start,
+        endData: item.end,
         total: "TRY₺ " + item.totalPrice,
         status: item.status,
       });
