@@ -54,9 +54,15 @@ router.get(
   "/get-all-orders/:userId",
   catchAsyncErrors(async (req, res, next) => {
     try {
-      const orders = await Order.find({ "user._id": req.params.userId }).sort({
-        createdAt: -1,
-      });
+      const orders = await Order.find({ "user._id": req.params.userId })
+        .sort({ createdAt: -1 })
+        .then((result) => {
+          return result.map((item) => ({
+            ...item.toObject(),
+            start: item.createdAt,
+            end: new Date(item.createdAt.getTime() + ((Number(item.cart[0].stock)) * 24 * 60 * 60 * 1000)), // Süreyi günlere çevirerek ekliyoruz
+          }));
+        });
 
       res.status(200).json({
         success: true,
